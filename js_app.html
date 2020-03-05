@@ -1,0 +1,570 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<title>currency convertor</title>
+
+<style>
+.myApp {
+  border: 2px solid black;
+  width: 500px;
+  height: 250px;
+  margin-left: 145px;
+  margin-top: 25%;
+  
+}
+
+select.select1 {
+  margin-left: 22%;
+  margin-top: 18%;
+  
+}
+
+.span_value {
+  width: 70px;
+  height: 40px;
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  
+}
+
+.my_spans {
+  text-align: center;
+  
+}
+
+.left_line {
+  width: 2px;
+  height: 100px;
+  background-color:black;
+  position: relative;
+  left: 172px;
+  bottom: 345px;
+  -ms-transform: rotate(20deg); /* IE 9 */
+  transform: rotate(35deg); /* Standard syntax */
+}
+
+.right_line {
+  width: 2px;
+  height: 104px;
+  background-color:black;
+  position: relative;
+  left: 675px;
+  bottom: 445px;
+  -ms-transform: rotate(20deg); /* IE 9 */
+  transform: rotate(35deg); /* Standard syntax */
+}
+
+
+
+.mid_line {
+  width: 503px;
+  height: 2px;
+  background-color:black;
+  position: relative;
+  left: 201px;
+  bottom: 540px;
+  -ms-transform: rotate(0deg); /* IE 9 */
+  transform: rotate(0deg); /* Standard syntax */
+}
+
+
+.before_right_line {
+  width: 2px;
+  height: 257px;
+  background-color:black;
+  position: relative;
+  left: 706px;
+  bottom: 540px;
+  -ms-transform: rotate(0deg); /* IE 9 */
+  transform: rotate(0deg); /* Standard syntax */
+}
+
+.last_mid_line {
+
+  width: 2px;
+  height: 100px;
+  background-color:black;
+  position: relative;
+  left: 676px;
+  bottom: 552px;
+  -ms-transform: rotate(20deg); /* IE 9 */
+  transform: rotate(39deg); /* Standard syntax */
+
+}
+
+.my_bot {
+  text-align: center;
+  margin-bottom: 10px;
+  margin-right: 7px;
+
+}
+</style>
+</head>
+<body>
+
+
+
+
+<div class="myApp">
+
+
+<br>
+<select id="mySelect1" class="select1" onchange="myFunction()">
+<option value="">None</option>
+<option value="dollar">USD</option>
+<option value="EGP">EGP</option>
+<option value="dinar">Dinar Kawit</option>
+<option value="euro">Euro</option>
+<option value="yen">yen</option>
+<option value="GBP">Pound sterling</option>
+<option value="CAD">Canadian dollar</option>
+<option value="AUD">Australian dollar</option>
+</select>
+
+<span class="span_to"> TO: </span>
+
+<select id="mySelect2" onchange="myFunction()">
+<option value="">None</option>
+<option value="dollar">USD</option>
+<option value="EGP">EGP</option>
+<option value="dinar">Dinar Kawit</option>
+<option value="euro">Euro</option>
+<option value="yen">yen</option>
+<option value="GBP">Pound sterling</option>
+<option value="CAD">Canadian dollar</option>
+<option value="AUD">Australian dollar</option>+
+</select>
+
+<br /><br /><br />
+
+<div class="my_spans">
+
+<span id="fselect" class="span_value"></span>
+
+  
+ 
+<span id="sselect" class="span_value"></span>
+
+</div>
+
+
+
+
+<br /><br />
+
+<p id="answer" class="my_bot"></p>
+
+</div>
+<div class="left_line"></div>
+
+<div class="right_line"></div>
+
+<div class="mid_line"></div>
+
+<div class="before_right_line"></div>
+
+<div class="last_mid_line"></div>
+
+<script>
+
+
+function myFunction() {  
+  
+  var dollar_vs_egp = "15.64";
+  var egp_vs_dollar = "0.064";
+
+  var dollar_vs_dinar = "0.31";
+  var dinar_vs_dollar = "3.27";
+
+  var dinar_vs_egp = "51.10";
+  var egp_vs_dinar = "0.020";
+  
+  var euro_vs_egp = "17.49";
+  var egp_vs_euro = "0.057";
+  
+  var euro_vs_dollar = "1.12";
+  var dollar_vs_euro = "0.90";
+  
+  var euro_vs_dinar = "0.34";
+  var dinar_vs_euro = "2.93";
+  
+  
+  /* yen JPAN */
+  var yen_vs_dollar = "0.0094";
+  var yen_vs_egp = "0.15";
+  var yen_vs_dinar = "0.0029";
+  var yen_vs_eruo = "0.0084"
+  
+  var dollar_vs_yen = "106.91";
+  var egp_vs_yen = "6.84";
+  var dinar_vs_yen = "349.51";
+  var euro_vs_yen = "119.65";
+  
+  /* Pound sterling	*/
+  
+  var gbp_vs_dollar = "1.29";
+  var gbp_vs_egp = "20.18";
+  var gbp_vs_dinar = "0.39";
+  var gbp_vs_euro = "1.15";
+  var gbp_vs_yen = "137.96";
+  
+  var dollar_vs_gbp = "0.77";
+  var egp_vs_gbp = "0.050";
+  var dinar_vs_gbp = "2.53";
+  var euro_vs_gbp = "0.87";
+  var yen_vs_gbp = "0.0072";
+  
+  /* Canadian dollar */
+  
+  var cad_vs_dollar = "0.74";
+  var cad_vs_egp = "11.66";
+  var cad_vs_dinar = "0.23";
+  var cad_vs_euro = "0.66";
+  var cad_vs_yen = "79.18";
+  var cad_vs_gbp = "0.57";
+  
+  var dollar_vs_cad = "1.34";
+  var egp_vs_cad = "0.086";
+  var dinar_vs_cad = "4.39";
+  var euro_vs_cad = "1.51";
+  var yen_vs_cad = "0.013";
+  var gbp_vs_cad = "1.74";
+  
+  
+  
+  var first_span = document.getElementById("fselect");
+  var second_span = document.getElementById("sselect");
+  var bot_answer = document.getElementById("answer");
+  
+  var x = document.getElementById("mySelect1");
+  var y = document.getElementById("mySelect2");
+  
+  first_span.innerHTML = " " + x.value;
+  second_span.innerHTML = " " + y.value;
+  
+  /* second_span.innerHTML = y.selectedIndex */
+  
+  
+  /* check for none */
+  if (x.selectedIndex == 0 || y.selectedIndex == 0) {
+     bot_answer.innerHTML = " ";
+     
+
+  }
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 1) {
+  
+     bot_answer.innerHTML = "1.00 " + y.value;
+     
+
+  };
+  
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 1) {
+  
+     bot_answer.innerHTML = "1.00 " + y.value;
+     
+  };
+ 
+  if (x.selectedIndex == 1 && y.selectedIndex == 2) {
+  
+     bot_answer.innerHTML = dollar_vs_egp + " " + y.value;
+     
+
+  };
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 3) {
+     
+     bot_answer.innerHTML = dollar_vs_dinar + " " + y.value;
+     
+
+  };
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 4) {
+     
+     bot_answer.innerHTML = dollar_vs_euro + " " + y.value;
+     
+     
+  };
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 5) {
+     
+     bot_answer.innerHTML = dollar_vs_yen + " " + y.value;
+     
+  };
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 6) {
+     
+     bot_answer.innerHTML = dollar_vs_gbp + " " + y.value;
+     
+  };
+  
+  if (x.selectedIndex == 1 && y.selectedIndex == 7) {
+     
+     bot_answer.innerHTML = dollar_vs_cad + " " + y.value;
+
+  };  
+  
+  if (x.selectedIndex == 2 && y.selectedIndex == 1) {
+     
+     bot_answer.innerHTML = egp_vs_dollar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 2 && y.selectedIndex == 2) {
+     
+     bot_answer.innerHTML = "1.00 " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 2 && y.selectedIndex == 3) {
+  
+     bot_answer.innerHTML = egp_vs_dinar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 2 && y.selectedIndex == 4) {
+  
+     bot_answer.innerHTML = egp_vs_euro + " " + y.value;
+     
+  };
+  
+  if (x.selectedIndex == 2 && y.selectedIndex == 5) {
+  
+     bot_answer.innerHTML = egp_vs_yen + " " + y.value;
+
+  };
+  if (x.selectedIndex == 2 && y.selectedIndex == 6) {
+  
+     bot_answer.innerHTML = egp_vs_gbp + " " + y.value;
+
+  };
+
+  if (x.selectedIndex == 2 && y.selectedIndex == 7) {
+  
+     bot_answer.innerHTML = egp_vs_cad + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 3 && y.selectedIndex == 1) {
+     
+     bot_answer.innerHTML = dinar_vs_dollar + " " + y.value;
+
+  };
+  if (x.selectedIndex == 3 && y.selectedIndex == 2) {
+          
+     bot_answer.innerHTML = dinar_vs_egp + " " + y.value;
+
+  };
+  if (x.selectedIndex == 3 && y.selectedIndex == 3) {
+     
+     bot_answer.innerHTML = "1.00 " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 3 && y.selectedIndex == 4) {
+     
+     bot_answer.innerHTML = dinar_vs_euro + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 3 && y.selectedIndex == 5) {
+     
+     bot_answer.innerHTML = dinar_vs_yen + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 3 && y.selectedIndex == 6) {
+     
+     bot_answer.innerHTML = dinar_vs_gbp + " " + y.value;
+
+  };
+
+  if (x.selectedIndex == 3 && y.selectedIndex == 7) {
+     
+     bot_answer.innerHTML = dinar_vs_cad + " " + y.value;
+     
+     first_span.style.display = "block";
+     first_span.style.marginLeft = "100px";
+     second_span.style.marginLeft = "240px";
+     second_span.style.marginTop = "-60px";
+     second_span.style.display = "inline";
+  };
+    
+  if (x.selectedIndex == 4 && y.selectedIndex == 1) {
+     
+     bot_answer.innerHTML = euro_vs_dollar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 4 && y.selectedIndex == 2) {
+     
+     bot_answer.innerHTML = euro_vs_egp + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 4 && y.selectedIndex == 3) {
+     
+     bot_answer.innerHTML = euro_vs_dinar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 4 && y.selectedIndex == 4) {
+     
+     bot_answer.innerHTML = "1.00 " + y.value;
+
+  };
+
+  if (x.selectedIndex == 4 && y.selectedIndex == 5) {
+     
+     bot_answer.innerHTML = euro_vs_yen + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 4 && y.selectedIndex == 6) {
+     
+     bot_answer.innerHTML = euro_vs_gbp + " " + y.value;
+
+  };  
+  
+  if (x.selectedIndex == 4 && y.selectedIndex == 7) {
+     
+     bot_answer.innerHTML = euro_vs_cad + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 5 && y.selectedIndex == 1) {
+     
+     bot_answer.innerHTML = yen_vs_dollar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 5 && y.selectedIndex == 2) {
+     
+     bot_answer.innerHTML = yen_vs_egp + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 5 && y.selectedIndex == 3) {
+     
+     bot_answer.innerHTML = yen_vs_dinar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 5 && y.selectedIndex == 4) {
+     
+     bot_answer.innerHTML = yen_vs_eruo + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 5 && y.selectedIndex == 5) {
+     
+     bot_answer.innerHTML = "1.00 " + y.value;
+
+  };
+
+  if (x.selectedIndex == 5 && y.selectedIndex == 6) {
+     
+     bot_answer.innerHTML = yen_vs_gbp + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 5 && y.selectedIndex == 7) {
+     
+     bot_answer.innerHTML = yen_vs_cad + " " + y.value;
+
+  };  
+  
+  if (x.selectedIndex == 6 && y.selectedIndex == 1) {
+     
+     bot_answer.innerHTML = gbp_vs_dollar + " " + y.value;
+
+  };  
+
+  if (x.selectedIndex == 6 && y.selectedIndex == 2) {
+     
+     bot_answer.innerHTML = gbp_vs_egp + " " + y.value;
+
+  };
+
+   if (x.selectedIndex == 6 && y.selectedIndex == 3) {
+     
+     bot_answer.innerHTML = gbp_vs_dinar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 6 && y.selectedIndex == 4) {
+     
+     bot_answer.innerHTML = gbp_vs_euro + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 6 && y.selectedIndex == 5) {
+     
+     bot_answer.innerHTML = gbp_vs_yen + " " + y.value;
+
+  };  
+
+  if (x.selectedIndex == 6 && y.selectedIndex == 6) {
+     
+     bot_answer.innerHTML = "1.00 " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 6 && y.selectedIndex == 7) {
+     
+     bot_answer.innerHTML = gbp_vs_cad + " " + y.value;
+
+  };  
+  
+  if (x.selectedIndex == 7 && y.selectedIndex == 1) {
+     
+     bot_answer.innerHTML = cad_vs_dollar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 7 && y.selectedIndex == 2) {
+     
+     bot_answer.innerHTML = cad_vs_egp + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 7 && y.selectedIndex == 3) {
+     
+     bot_answer.innerHTML = cad_vs_dinar + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 7 && y.selectedIndex == 4) {
+     
+     bot_answer.innerHTML = cad_vs_euro + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 7 && y.selectedIndex == 5) {
+     
+     bot_answer.innerHTML = cad_vs_yen + " " + y.value;
+
+  };
+
+  if (x.selectedIndex == 7 && y.selectedIndex == 6) {
+     
+     bot_answer.innerHTML = cad_vs_gbp + " " + y.value;
+
+  };
+  
+  if (x.selectedIndex == 7 && y.selectedIndex == 7) {
+     
+     bot_answer.innerHTML = "1.00 " + y.value;
+
+  };
+  
+};
+
+
+</script>
+
+</body>
+</html>
