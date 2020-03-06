@@ -2,14 +2,65 @@
 <html>
 <head>
 <title>currency convertor</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Rancho&effect=fire-animation">
 
 <style>
+
+body {
+  margin: 0;
+  padding: 0px;  
+  background-image: url("https://img2.arabpng.com/20180310/ksw/kisspng-graphic-design-brand-triangle-pattern-simple-high-technology-business-blue-background-5aa3a76b400700.8823397915206746672623.jpg");
+  background-size: cover;
+  background-repeate: no-repeate;
+}
+
+.header {
+  padding: 30px;
+  background-color: black;
+  color: white;
+  width: 400px;
+  text-align: center;
+  margin-left: 24%;
+  
+}
+
+.header h1 {
+  font-size: 38px;
+}
+
+
+.footer {
+  padding: 30px;
+  background-color: black;
+  color: white;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  bottom: 650px;
+  left: 18px;
+  margin-left: 24%;
+  
+}
+
+.halp {
+  width: 8px;
+  height: 120px;
+  background-color: black;
+  position: relative;
+  bottom: 1025px;
+  left: 418px;
+   border: 2px solid gold;
+}
+
 .myApp {
-  border: 2px solid black;
+  border: 4px solid black;
   width: 500px;
   height: 250px;
   margin-left: 145px;
   margin-top: 25%;
+  background-color: white;
   
 }
 
@@ -35,7 +86,7 @@ select.select1 {
 }
 
 .left_line {
-  width: 2px;
+  width: 4px;
   height: 100px;
   background-color:black;
   position: relative;
@@ -46,7 +97,7 @@ select.select1 {
 }
 
 .right_line {
-  width: 2px;
+  width: 4px;
   height: 104px;
   background-color:black;
   position: relative;
@@ -60,7 +111,7 @@ select.select1 {
 
 .mid_line {
   width: 503px;
-  height: 2px;
+  height: 4px;
   background-color:black;
   position: relative;
   left: 201px;
@@ -71,7 +122,7 @@ select.select1 {
 
 
 .before_right_line {
-  width: 2px;
+  width: 4px;
   height: 257px;
   background-color:black;
   position: relative;
@@ -83,7 +134,7 @@ select.select1 {
 
 .last_mid_line {
 
-  width: 2px;
+  width: 4px;
   height: 100px;
   background-color:black;
   position: relative;
@@ -100,17 +151,67 @@ select.select1 {
   margin-right: 7px;
 
 }
+
+
+@media only screen and (min-width: 1130px) {
+  .cont {   
+    
+    margin-left: 23%;
+  }
+  
+ .header {
+  padding: 30px;
+  background-color: black;
+  color: white;
+  width: 400px;
+  text-align: center;
+  margin-left: 37%;
+}
+
+.halp {
+  width: 8px;
+  height: 240px;
+  background-color: black;
+  position: relative;
+  bottom: 1140px;
+  left: 450px;
+  
+}
+
+.footer {
+  padding: 30px;
+  background-color: black;
+  color: white;
+  width: 400px;
+  text-align: center;
+  position: relative;
+  bottom: 650px;
+  left: 180px;
+  
+  
+}
+
+
+}
+
+
 </style>
 </head>
 <body>
 
 
+<br /><br />
 
+<div class="header">
+<h1 class="font-effect-fire-animation">Currency Convertor</h1>
+</div>
+
+<div class="cont">
 
 <div class="myApp">
 
 
-<br>
+<br />
 <select id="mySelect1" class="select1" onchange="myFunction()">
 <option value="">None</option>
 <option value="dollar">USD</option>
@@ -157,6 +258,8 @@ select.select1 {
 <p id="answer" class="my_bot"></p>
 
 </div>
+
+
 <div class="left_line"></div>
 
 <div class="right_line"></div>
@@ -167,70 +270,75 @@ select.select1 {
 
 <div class="last_mid_line"></div>
 
+<div class="halp"></div>
+</div>
+
+<div class="footer">Developed By Mahmoud Hegazy</div>
+
 <script>
 
 
 function myFunction() {  
   
-  var dollar_vs_egp = "15.64";
-  var egp_vs_dollar = "0.064";
+  var dollar_vs_egp = 15.64;
+  var egp_vs_dollar = 0.064;
 
-  var dollar_vs_dinar = "0.31";
-  var dinar_vs_dollar = "3.27";
+  var dollar_vs_dinar = 0.31;
+  var dinar_vs_dollar = 3.27;
 
-  var dinar_vs_egp = "51.10";
-  var egp_vs_dinar = "0.020";
+  var dinar_vs_egp = 51.10;
+  var egp_vs_dinar = 0.020;
   
-  var euro_vs_egp = "17.49";
-  var egp_vs_euro = "0.057";
+  var euro_vs_egp = 17.49;
+  var egp_vs_euro = 0.057;
   
-  var euro_vs_dollar = "1.12";
-  var dollar_vs_euro = "0.90";
+  var euro_vs_dollar = 1.12;
+  var dollar_vs_euro = 0.90;
   
-  var euro_vs_dinar = "0.34";
-  var dinar_vs_euro = "2.93";
+  var euro_vs_dinar = 0.34;
+  var dinar_vs_euro = 2.93;
   
   
   /* yen JPAN */
-  var yen_vs_dollar = "0.0094";
-  var yen_vs_egp = "0.15";
-  var yen_vs_dinar = "0.0029";
-  var yen_vs_eruo = "0.0084"
+  var yen_vs_dollar = 0.0094;
+  var yen_vs_egp = 0.15;
+  var yen_vs_dinar = 0.0029;
+  var yen_vs_eruo = 0.0084
   
-  var dollar_vs_yen = "106.91";
-  var egp_vs_yen = "6.84";
-  var dinar_vs_yen = "349.51";
-  var euro_vs_yen = "119.65";
+  var dollar_vs_yen = 106.91;
+  var egp_vs_yen = 6.84;
+  var dinar_vs_yen = 349.51;
+  var euro_vs_yen = 119.65;
   
   /* Pound sterling	*/
   
-  var gbp_vs_dollar = "1.29";
-  var gbp_vs_egp = "20.18";
-  var gbp_vs_dinar = "0.39";
-  var gbp_vs_euro = "1.15";
-  var gbp_vs_yen = "137.96";
+  var gbp_vs_dollar = 1.29;
+  var gbp_vs_egp = 20.18;
+  var gbp_vs_dinar = 0.39;
+  var gbp_vs_euro = 1.15;
+  var gbp_vs_yen = 137.96;
   
-  var dollar_vs_gbp = "0.77";
-  var egp_vs_gbp = "0.050";
-  var dinar_vs_gbp = "2.53";
-  var euro_vs_gbp = "0.87";
-  var yen_vs_gbp = "0.0072";
+  var dollar_vs_gbp = 0.77;
+  var egp_vs_gbp = 0.050;
+  var dinar_vs_gbp = 2.53;
+  var euro_vs_gbp = 0.87;
+  var yen_vs_gbp = 0.0072;
   
   /* Canadian dollar */
   
-  var cad_vs_dollar = "0.74";
-  var cad_vs_egp = "11.66";
-  var cad_vs_dinar = "0.23";
-  var cad_vs_euro = "0.66";
-  var cad_vs_yen = "79.18";
-  var cad_vs_gbp = "0.57";
+  var cad_vs_dollar = 0.74;
+  var cad_vs_egp = 11.66;
+  var cad_vs_dinar = 0.23;
+  var cad_vs_euro = 0.66;
+  var cad_vs_yen = 79.18;
+  var cad_vs_gbp = 0.57;
   
-  var dollar_vs_cad = "1.34";
-  var egp_vs_cad = "0.086";
-  var dinar_vs_cad = "4.39";
-  var euro_vs_cad = "1.51";
-  var yen_vs_cad = "0.013";
-  var gbp_vs_cad = "1.74";
+  var dollar_vs_cad = 1.34;
+  var egp_vs_cad = 0.086;
+  var dinar_vs_cad = 4.39;
+  var euro_vs_cad = 1.51;
+  var yen_vs_cad = 0.013;
+  var gbp_vs_cad = 1.74;
   
   
   
