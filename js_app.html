@@ -221,7 +221,6 @@ select.select1 {
 <option value="yen">yen</option>
 <option value="GBP">Pound sterling</option>
 <option value="CAD">Canadian dollar</option>
-<option value="AUD">Australian dollar</option>
 </select>
 
 <span class="span_to"> TO: </span>
@@ -235,7 +234,6 @@ select.select1 {
 <option value="yen">yen</option>
 <option value="GBP">Pound sterling</option>
 <option value="CAD">Canadian dollar</option>
-<option value="AUD">Australian dollar</option>+
 </select>
 
 <br /><br /><br />
@@ -493,12 +491,7 @@ function myFunction() {
   if (x.selectedIndex == 3 && y.selectedIndex == 7) {
      
      bot_answer.innerHTML = dinar_vs_cad + " " + y.value;
-     
-     first_span.style.display = "block";
-     first_span.style.marginLeft = "100px";
-     second_span.style.marginLeft = "240px";
-     second_span.style.marginTop = "-60px";
-     second_span.style.display = "inline";
+    
   };
     
   if (x.selectedIndex == 4 && y.selectedIndex == 1) {
